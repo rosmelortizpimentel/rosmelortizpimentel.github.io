@@ -12,9 +12,9 @@ function sumarDividoresPositivos(numero) {
     }
     return sumaDivisores;
 }
-let numerongresado = 220;
+let numerongresado = 220; // parseInt(prompts("Ingrese un Número"),10);
 let sumaDivisores = sumarDividoresPositivos(numerongresado);
-console.log(sumaDivisores == 0 ? `${numerongresado} no tiene divisores.` : `Suma de divisores de ${numerongresado} = ${sumaDivisores}`)
+console.log(sumaDivisores === 0 ? `${numerongresado} no tiene divisores.` : `Suma de divisores de ${numerongresado} = ${sumaDivisores}`)
 
 
 /*
@@ -33,7 +33,7 @@ function buscarNumerosAmigos(numero) {
          // Se pretende obtener un objeto de este tipo: { numero: 220, sumaDivisores: 284, sumaDivisoresDeDivisores: 220 }
         if (sumaDivisores <= numero) { 
             let sumaDivisoresDeDivisores = sumarDividoresPositivos(sumaDivisores); 
-            if (i == sumaDivisoresDeDivisores && sumaDivisores != sumaDivisoresDeDivisores) {
+            if (i === sumaDivisoresDeDivisores && i !== sumaDivisores) {
                 numerosAmigos.push({ 'numero': i, 'sumaDivisores': sumaDivisores, 'sumaDivisoresDeDivisores': sumaDivisoresDeDivisores })
             }
         }
@@ -41,10 +41,12 @@ function buscarNumerosAmigos(numero) {
     return numerosAmigos;
 }
 
-let numerosAmigos = buscarNumerosAmigos(3000);
+let numerongresado2 = 3000; // parseInt(prompts("Ingrese un Número"),10);
+let numerosAmigos = buscarNumerosAmigos(numerongresado2);
 
 console.log("******************* PROCESAMIENTO *******************")
 console.log(numerosAmigos);
+console.log("******************* PROCESAMIENTO *******************")
 
 console.log("******************* RESULTADO *******************")
 numerosAmigos.forEach(element => {

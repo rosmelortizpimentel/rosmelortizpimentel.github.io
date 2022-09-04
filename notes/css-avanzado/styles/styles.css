@@ -1,0 +1,27 @@
+.contenedor-flex {
+  display: flex;
+  background-color: aquamarine;
+  flex-direction: row; /*row | row-reverse | column | column-reverse*/
+  flex-wrap: wrap; /*Los items saltan a a sgte linea*/
+  flex-flow:row wrap; /*Otra forma de escribir flex-direction + flex-wrap*/
+  justify-content: center;
+  height: 1000px;
+  align-items: flex-start;
+  align-content: flex-start;
+  column-gap: 25px;
+  row-gap: 25px;
+}
+
+.contenedor-item {
+  background-color: yellow;
+  width: 220px;
+  height: 220px;
+  border-radius: 5%;
+  /*margin: 10px;*/
+
+  border: solid orange;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+}

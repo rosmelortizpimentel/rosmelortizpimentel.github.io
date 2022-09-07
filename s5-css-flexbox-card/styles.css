@@ -1,0 +1,91 @@
+* {
+  box-sizing: content-box;
+  margin: 0px;
+  padding: 0px;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-flow: column nowrap;
+  background-color: #e8eff5;
+  font-family: "ABeeZee", sans-serif;
+  color: #7e818a;
+}
+
+.card {
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: stretch;
+  height: 225px;
+  width: 580px;
+  box-shadow: 2px 3px 3px #a8afb3;
+  border-radius: 10px;
+  margin: 10px;
+}
+
+.card__image {
+  display: flex;
+  width: 300px;
+}
+
+.card__image img {
+  border-radius: 10px 0px 0px 10px;
+  width: 100%;
+}
+
+.card__info {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-left: 30px;
+  padding-right: 30px;
+  background-color: white;
+  border-radius: 0px 10px 10px 0px;
+  width: 400px;
+}
+
+.card__title {
+  font-size: 16px;
+  line-height: 140%;
+  padding-bottom: 15px;
+}
+.card__description {
+  text-align: justify;
+  font-size: 10px;
+  line-height: 170%;
+  padding-bottom: 20px;
+}
+
+.card__autor {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: flex-start;
+}
+
+.card__autor .autor__photo {
+  height: 30px;
+  width: 32px;
+  background-color: transparent;
+  border-radius: 50%;
+}
+
+.card__autor .autor__name {
+  font-size: 11px;
+  line-height: 140%;
+  width: 80%;
+  padding-left: 10px;
+}
+
+.card__autor .autor__name span {
+  font-size: 10px;
+}
+
+.card__autor .icon__share {
+  height: 20px;
+  width: 20px;
+  background-color: #edf5fc;
+  border-radius: 50%;
+  border: 1px solid #dbe5f0;
+}

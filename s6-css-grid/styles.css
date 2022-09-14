@@ -370,8 +370,8 @@ input[type="submit"] {
   }
 
   .container-services {
-    grid-template-columns: 1fr;
-    grid-template-rows: repeat(6, 1fr);
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: repeat(3, 1fr);
   }
   .services-section {
     padding: 20px;

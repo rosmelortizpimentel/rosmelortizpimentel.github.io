@@ -22,9 +22,9 @@
     <div class="container">
         <div class="product__images">
             <div class="image">
-                <img alt="POLO PARA HOMBRE CUELLO REDONDO ESTAMPADO" src="assets/images/polo-estilo-4.jpg">
+                <img alt="POLO PARA HOMBRE CUELLO REDONDO ESTAMPADO" src="assets/images/polo-estilo-4.jpg" id="image">
             </div>
-        </div>  
+        </div>
 
         <div class="product__detail">
             <section class="product__header">
@@ -35,24 +35,24 @@
                 <p></p>
             </section>
             <section class="product__price">
-                <div>Precio</div>
-                <div>S/ 39.99</div>
+                <div>Precio ($)</div>
+                <div id="precio"> 25.00</div>
             </section>
             <section class="product__options">
                 <div class="product__color">
                     <div class="product__color__selected">
-                        <p>Color: <span>Gris</span></p>
+                        <p>Color: <span id="lbColor">Gris</span></p>
                     </div>
                     <div class="colors">
-                        <div class="colors__option selected" title="Gris">
+                        <div class="colors__option selected" onclick="selectColor('Gris')" title="Gris">
                             <div class="color" style="background:#868686">
                             </div>
                         </div>
-                        <div class="colors__option" title="Lila">
+                        <div class="colors__option" onclick="selectColor('Lila')" title="Lila">
                             <div class="color" style="background:#CBC2FB">
                             </div>
                         </div>
-                        <div class="colors__option" title="Azul">
+                        <div class="colors__option" onclick="selectColor('Azul')" title="Azul">
                             <div class="color" style="background:#102780"></div>
                         </div>
                     </div>
@@ -61,98 +61,100 @@
                     <div class="container--product-items">
                         <div class="product__size">
                             <div class="product__size__selected">
-                                <p>Talla: <span>M</span></p>
+                                <p>Talla: <span id="lbSize">S</span></p>
                             </div>
                             <div class="product__size__converter">
                                 <span>Debes elegir tu talla</span>
                             </div>
                             <ol class="sizes">
                                 <li class="sizes__option">
-                                    <input type="radio" name="talla_ropa" value="s">
+                                    <input type="radio" name="talla_ropa" value="S" checked>
                                     <label for="talla_ropa-s" type="button">S</label>
                                 </li>
                                 <li class="sizes__option">
-                                    <input type="radio" name="talla_ropa" value="m">
+                                    <input type="radio" name="talla_ropa" value="M">
                                     <label for="talla_ropa-m" type="button">M</label>
                                 </li>
                                 <li class="sizes__option">
-                                    <input type="radio" name="talla_ropa" value="l">
+                                    <input type="radio" name="talla_ropa" value="L">
                                     <label for="talla_ropa-l" type="button">L</label>
                                 </li>
                                 <li class="sizes__option">
-                                    <input type="radio" name="talla_ropa" disabled="" value="xl">
+                                    <input type="radio" name="talla_ropa" disabled="" value="XL">
                                     <label for="talla_ropa-xl" type="button">XL</label>
                                 </li>
                             </ol>
                         </div>
                         <div class="container--description">
                             <label for="quantity" class="text">Cantidad:</label>
-                            <input type="number" id="quantity" name="quantity" min="1" max="5">
+                            <input type="number" id="quantity" name="quantity" min="1" max="5" value="1">
                         </div>
                     </div>
                 </div>
-              
+
                 <div class="product__design">
                     <div class="product__design__selected">
-                        <p>Dieño: <span>Animales</span></p>
+                        <p>Dieño: <span id="lbDesign">Big Picture</span></p>
                     </div>
                     <div class="designs">
-                        <div class="designs__option selected" title="">
+                        <div class="designs__option selected" onclick="selectDesign('Big Picture')" title="Big Picture">
                             <img alt="POLO PARA HOMBRE CUELLO REDONDO ESTAMPADO" src="assets/images/polo-estilo-1.jpg">
                         </div>
-                        <div class="designs__option" title="">
+                        <div class="designs__option" onclick="selectDesign('Only Text')" title="Only Text">
                             <img alt="POLO PARA HOMBRE CUELLO REDONDO ESTAMPADO" src="assets/images/polo-estilo-2.jpg">
                         </div>
-                        <div class="designs__option" title="">
+                        <div class="designs__option" onclick="selectDesign('Picture and Text')"
+                            title="Picture and Text">
                             <img alt="POLO PARA HOMBRE CUELLO REDONDO ESTAMPADO" src="assets/images/polo-estilo-3.jpg">
                         </div>
                     </div>
                 </div>
             </section>
         </div>
-        
+
         <div class="product__order">
             <div class="order-description">
                 <h3 class="text--center">Ordene su producto</h3>
+                <br>
                 <p class="text--center">
-                Rellene los campos siguientes para proceder con la orden.
-              </p>
-              <form id="formulario">
-                <label for="fname">Nombre:</label><br />
-                <input type="text" id="fname" name="fname" placeholder="John" /><br />
-                <label for="fdir">Direccion:</label><br />
-                <input type="text" id="fdir" name="fdir" placeholder="Times Square New York" /><br />
-                <br />
-                
-              </form>
-              <div class="container--center">
-                <input type="submit" value="ORDENAR" class="button" onclick="showOrder()"/>
-              </div>
+                    Rellene los campos siguientes para proceder con la orden.
+                </p>
+                <form id="formulario">
+                    <label for="fname">Nombre:</label><br />
+                    <input type="text" id="fname" name="fname" placeholder="John" /><br />
+                    <label for="fdir">Direccion:</label><br />
+                    <input type="text" id="fdir" name="fdir" placeholder="Times Square New York" /><br />
+                    <br />
+
+                </form>
+                <div class="container--center">
+                    <input type="submit" value="ORDENAR" class="button" onclick="showOrder()" />
+                </div>
             </div>
         </div>
     </div>
-        <footer>
-        </footer>
+    <footer>
+    </footer>
 
-        <div class="hidden container--order">
-            <section class="who-we-are-section container--center">
-                <div class="box text--center">
-                    <h3 class="text--xl">
-                        SU ORDEN
-                    </h3>
-                    <p class="text--m text--grey-color text--300">
-                        le enviaremos un correo electrónico de confirmación 
-                        una vez que su pedido haya sido enviado
-                    </p>
-                </div>
-            </section>
+    <div class="hidden container--order">
+        <section class="who-we-are-section container--center">
+            <div class="box text--center">
+                <h3 class="text--xl">
+                    SU ORDEN
+                </h3>
+                <p class="text--m text--grey-color text--300">
+                    le enviaremos un correo electrónico de confirmación
+                    una vez que su pedido haya sido enviado
+                </p>
+            </div>
+        </section>
 
-            <section class="payment-section container--between">
-                <div class="box container-payment">
-                  <div class="payment-description">
+        <section class="payment-section container--between">
+            <div class="box container-payment">
+                <div class="payment-description">
                     <h3>Numero de orden</h3>
-                    <p>
-                      123456
+                    <p id="numeroOrden">
+                        123456
                     </p>
                     <div>
                         <h3>Tipo de pago</h3>
@@ -160,97 +162,180 @@
                             <span>XXXXXXXXX123</span>
                         </p>
                     </div>
-                  </div>
-                  <div class="payment-description">
-                    <h3>Fecha de orden</h3>
-                    <p>
-                      16-09-2022
-                    </p>
-                  </div>
-
-                  <div class="payment-description">
-                    <h3>Detalle de entrega</h3>
-                    <p id = "nombre">Jhon Doe</p>
-                    <p>Wall street</p>
-                  </div>
                 </div>
-            </section>
+                <div class="payment-description">
+                    <h3>Fecha de orden</h3>
+                    <p id="fechaOrden">
+                        16-09-2022
+                    </p>
+                </div>
 
-            
-            <section class="payment-section container--between">
-                <div class="box container-payment">
-                  <div class="payment-description">
-                    <h3>Producto: <span>Camiseta polo</span></h3>
-                  </div>
-                  <div class="payment-description">
+                <div class="payment-description">
+                    <h3>Detalle de entrega</h3>
+                    <p id="nombre">Jhon Doe</p>
+                    <p id="direccion">Wall street</p>
+                </div>
+            </div>
+        </section>
+
+
+        <section class="payment-section container--between">
+            <div class="box container-payment">
+                <div class="payment-description">
+                    <h3>Producto: <span id="producto">Camiseta ...</span></h3>
+                </div>
+                <div class="payment-description">
+                    <h3>Talla: <span id="talla">M</span></h3>
+                </div>
+                <div class="payment-description">
+                    <h3>Color: <span id="color">Lila</span></h3>
+                </div>
+                <div class="payment-description">
+                    <h3>Diseño: <span id="modelo">Big Picture</span></h3>
+                    <div class="designs__option">
+                        <img id="designSelected" alt="POLO PARA HOMBRE CUELLO REDONDO ESTAMPADO"
+                            src="assets/images/polo-estilo-3.jpg">
+                    </div>
+                </div>
+                <div class="payment-description">
                     <h3>Cantidad</h3>
-                    <p>
+                    <p id="cantidad">
                         2
                     </p>
-                  </div>
-
-                  <div class="payment-description">
-                    <h3>Precio</h3>
-                    <p>$ 56.23</p>
-                    
-                  </div>
                 </div>
-            </section>
+                <div class="payment-description">
+                    <h3>Precio Unitario</h3>
+                    <p id="precioUnitario">$ 56.23</p>
 
-            <section class="payment-section container--between">
-                <div class="box container-payment">
-                  <div class="payment-description">
-                    <p>Subtotal: <span>$54.12</span></p>
-                    <p>Descuento: <span>$54.12</span></p>
-                    <p>Iva: <span>$54.12</span></p>
-                    <p>Envio: <span>$4.12</span></p>
-                  </div>
-                  <div class="payment-description--total">
-                    <p>Total: <span>$21.98</span></p>
-                  </div>
                 </div>
+                <div class="payment-description">
+                    <h3>Precio Total</h3>
+                    <p id="precioTotal">$ 56.23</p>
 
-            </section>
-            <footer>
-                <div class="container--center">
-                    <input type="submit" value="REGRESAR" class="button" onclick="showProduct()"/>
                 </div>
-            </footer>
-        </div>
+            </div>
+        </section>
 
-        <script>
-            function selecionarTalla() {
+        <!-- <section class="payment-section container--between">
+            <div class="box container-payment">
+                <div class="payment-description">
+                    <p>Precio Total: <span>$</span><span id="precioTotal">54.12</span></p>
+                    <p>Descuento: <span>$</span><span>$54.12</span></p>
+                    <p>Iva: <span>$</span><span>$54.12</span></p>
+                    <p>Envio: <span>$</span> <span>$4.12</span></p>
+                </div>
+                <div class="payment-description--total">
+                    <p>Total: <span id="precioTotal">$21.98</span></p>
+                </div>
+            </div>
 
+        </section> -->
+        <footer>
+            <div class="container--center">
+                <input type="submit" value="REGRESAR" class="button" onclick="showProduct()" />
+            </div>
+        </footer>
+    </div>
+
+    <script>
+        function selectSize() {
+
+            // const tallas = document.getElementsByName('talla_ropa');
+            // for (var talla of tallas) {
+            //     if (tallas.checked) {
+            //         document.getElementById('lbSize').innerHTML = talla.value;
+            //         alert(talla.value)
+            //     }
+            // }
+
+        }
+
+        function selectColor(color) {
+            let colors = document.querySelectorAll('.colors__option');
+            let lbColor = document.getElementById('lbColor');
+            let selected = null;
+            colors.forEach(element => {
+                element.classList.remove("selected");
+                element.getAttribute('title') === color ? selected = element : '';
+
+            });
+            selected.classList.add("selected");
+            lbColor.innerHTML = color;
+        }
+
+        function selectDesign(design) {
+            let designs = document.querySelectorAll('.designs__option');
+            let lbDesign = document.getElementById('lbDesign');
+            let selected = null;
+            designs.forEach(el => {
+                el.classList.remove("selected");
+                el.getAttribute('title') === design ? selected = el : '';
+
+            });
+            selected.classList.add("selected");
+            lbDesign.innerHTML = design;
+
+
+            let image = document.getElementById('image');
+            const src = document.querySelector('.designs__option.selected > img').getAttribute('src');
+            image.src = src;
+
+
+            document.getElementById('designSelected').src = src;
+        }
+
+        function showOrder() {
+
+
+            const formulario = document.getElementById("formulario");
+            const name = formulario.elements["fname"].value;
+            const direccion = formulario.elements["fdir"].value;
+
+            const cantidad = document.getElementById("quantity").value;
+            const precioUnitario = document.getElementById("precio").innerHTML;
+
+            if (name === '' && direccion === '') {
+                alert('Complete todos los datos');
+                return;
             }
 
-            function seleccionarColor() {
+            let productWindow = document.querySelector('.container')
+            let orderWindow = document.querySelector('.container--order')
+            productWindow.classList.add('hidden')
+            orderWindow.classList.remove('hidden')
 
+            document.getElementById('nombre').innerHTML = name;
+            document.getElementById('direccion').innerHTML = direccion;
+            document.getElementById('numeroOrden').innerHTML = Math.floor(Math.random() * 1000000000);;
+            document.getElementById('fechaOrden').innerHTML = new Date();
+            document.getElementById('producto').innerHTML = document.querySelector('.product__header > h1').innerHTML
+
+            document.getElementById('color').innerHTML = document.getElementById('lbColor').innerHTML;
+            document.getElementById('modelo').innerHTML = document.getElementById('lbDesign').innerHTML;
+            document.getElementById('cantidad').innerHTML = cantidad;
+            document.getElementById('precioUnitario').innerHTML = precioUnitario
+            document.getElementById('precioTotal').innerHTML = parseFloat(cantidad) * parseFloat(precioUnitario);
+
+
+            const tallas = document.getElementsByName('talla_ropa');
+            console.log(tallas);
+            for (var talla of tallas) {
+                if (talla.checked) {
+                    console.log('');
+
+                    document.getElementById('talla').innerHTML = talla.value;
+                }
             }
 
-            function seleccionarDisenio() {
 
-            }
-
-            function showOrder() {
-                let productWindow = document.querySelector('.container')
-                let orderWindow = document.querySelector('.container--order')
-                productWindow.classList.add('hidden')
-                orderWindow.classList.remove('hidden')
-
-                const formulario = document.getElementById("formulario");
-                const name = formulario.elements["fname"].value;
-                const direccion =  formulario.elements["fdir"].value;
-
-                
-                
-            }
-            function showProduct() {
-                let productWindow = document.querySelector('.container')
-                let orderWindow = document.querySelector('.container--order')
-                productWindow.classList.remove('hidden')
-                orderWindow.classList.add('hidden')
-            }
-        </script>
+        }
+        function showProduct() {
+            let productWindow = document.querySelector('.container')
+            let orderWindow = document.querySelector('.container--order')
+            productWindow.classList.remove('hidden')
+            orderWindow.classList.add('hidden')
+        }
+    </script>
 </body>
 
 </html>

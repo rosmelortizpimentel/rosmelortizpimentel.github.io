@@ -19,13 +19,13 @@
     </header>
 
 
+    <!--ORDER-->
     <div class="container">
         <div class="product__images">
             <div class="image">
                 <img alt="POLO PARA HOMBRE CUELLO REDONDO ESTAMPADO" src="assets/images/polo-estilo-4.jpg" id="image">
             </div>
         </div>
-
         <div class="product__detail">
             <section class="product__header">
                 <h1>POLO PARA HOMBRE CUELLO REDONDO ESTAMPADO </h1>
@@ -39,7 +39,6 @@
                 <div id="precio"> 25.00</div>
             </section>
             <section class="product__options">
-
                 <div class="product__design">
                     <div class="product__design__selected">
                         <p>Dieño: <span id="lbDesign">Big Picture</span></p>
@@ -109,11 +108,8 @@
                         </div>
                     </div>
                 </div>
-
-
             </section>
         </div>
-
         <div class="product__order">
             <div class="order-description">
                 <h3 class="text--center">Ordene su producto</h3>
@@ -135,9 +131,8 @@
             </div>
         </div>
     </div>
-    <footer>
-    </footer>
 
+    <!--RESUME-->
     <div class="hidden container--order">
         <section class="who-we-are-section container--center">
             <div class="box text--center">
@@ -244,16 +239,10 @@
         </footer>
     </div>
 
+    <footer>
+    </footer>
     <script>
         function selectSize() {
-
-            // const tallas = document.getElementsByName('talla_ropa');
-            // for (var talla of tallas) {
-            //     if (tallas.checked) {
-            //         document.getElementById('lbSize').innerHTML = talla.value;
-            //         alert(talla.value)
-            //     }
-            // }
 
         }
 
@@ -297,15 +286,16 @@
             const formulario = document.getElementById("formulario");
             const name = formulario.elements["fname"].value;
             const direccion = formulario.elements["fdir"].value;
-
             const cantidad = document.getElementById("quantity").value;
             const precioUnitario = document.getElementById("precio").innerHTML;
 
+            /*Validamos campos obligatorios*/
             if (name === '' && direccion === '') {
                 alert('Complete todos los datos');
                 return;
             }
 
+            /*Completamos el formulari0*/
             let productWindow = document.querySelector('.container')
             let orderWindow = document.querySelector('.container--order')
             productWindow.classList.add('hidden')

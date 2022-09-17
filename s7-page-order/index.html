@@ -39,6 +39,24 @@
                 <div id="precio"> 25.00</div>
             </section>
             <section class="product__options">
+
+                <div class="product__design">
+                    <div class="product__design__selected">
+                        <p>Dieño: <span id="lbDesign">Big Picture</span></p>
+                    </div>
+                    <div class="designs">
+                        <div class="designs__option selected" onclick="selectDesign('Big Picture')" title="Big Picture">
+                            <img alt="POLO PARA HOMBRE CUELLO REDONDO ESTAMPADO" src="assets/images/polo-estilo-1.jpg">
+                        </div>
+                        <div class="designs__option" onclick="selectDesign('Only Text')" title="Only Text">
+                            <img alt="POLO PARA HOMBRE CUELLO REDONDO ESTAMPADO" src="assets/images/polo-estilo-2.jpg">
+                        </div>
+                        <div class="designs__option" onclick="selectDesign('Picture and Text')"
+                            title="Picture and Text">
+                            <img alt="POLO PARA HOMBRE CUELLO REDONDO ESTAMPADO" src="assets/images/polo-estilo-3.jpg">
+                        </div>
+                    </div>
+                </div>
                 <div class="product__color">
                     <div class="product__color__selected">
                         <p>Color: <span id="lbColor">Gris</span></p>
@@ -63,9 +81,9 @@
                             <div class="product__size__selected">
                                 <p>Talla: <span id="lbSize">S</span></p>
                             </div>
-                            <div class="product__size__converter">
+                            <!-- <div class="product__size__converter">
                                 <span>Debes elegir tu talla</span>
-                            </div>
+                            </div> -->
                             <ol class="sizes">
                                 <li class="sizes__option">
                                     <input type="radio" name="talla_ropa" value="S" checked>
@@ -92,23 +110,7 @@
                     </div>
                 </div>
 
-                <div class="product__design">
-                    <div class="product__design__selected">
-                        <p>Dieño: <span id="lbDesign">Big Picture</span></p>
-                    </div>
-                    <div class="designs">
-                        <div class="designs__option selected" onclick="selectDesign('Big Picture')" title="Big Picture">
-                            <img alt="POLO PARA HOMBRE CUELLO REDONDO ESTAMPADO" src="assets/images/polo-estilo-1.jpg">
-                        </div>
-                        <div class="designs__option" onclick="selectDesign('Only Text')" title="Only Text">
-                            <img alt="POLO PARA HOMBRE CUELLO REDONDO ESTAMPADO" src="assets/images/polo-estilo-2.jpg">
-                        </div>
-                        <div class="designs__option" onclick="selectDesign('Picture and Text')"
-                            title="Picture and Text">
-                            <img alt="POLO PARA HOMBRE CUELLO REDONDO ESTAMPADO" src="assets/images/polo-estilo-3.jpg">
-                        </div>
-                    </div>
-                </div>
+
             </section>
         </div>
 
@@ -198,19 +200,17 @@
                     </div>
                 </div>
                 <div class="payment-description">
-                    <h3>Cantidad</h3>
-                    <p id="cantidad">
-                        2
-                    </p>
-                </div>
-                <div class="payment-description">
-                    <h3>Precio Unitario</h3>
-                    <p id="precioUnitario">$ 56.23</p>
+                    <h3>Cantidad: <span id="cantidad"> 2 </span></h3>
 
                 </div>
                 <div class="payment-description">
-                    <h3>Precio Total</h3>
-                    <p id="precioTotal">$ 56.23</p>
+                    <h3>Precio Unitario: <span>$ </span> <span id="precioUnitario">$ 56.23</span></h3>
+
+
+                </div>
+                <div class="payment-description">
+                    <h3>Precio Total: <span>$ </span> <span id="precioTotal">$ 56.23</span></h3>
+
 
                 </div>
             </div>
@@ -314,7 +314,7 @@
             document.getElementById('modelo').innerHTML = document.getElementById('lbDesign').innerHTML;
             document.getElementById('cantidad').innerHTML = cantidad;
             document.getElementById('precioUnitario').innerHTML = precioUnitario
-            document.getElementById('precioTotal').innerHTML = parseFloat(cantidad) * parseFloat(precioUnitario);
+            document.getElementById('precioTotal').innerHTML = (parseFloat(cantidad) * parseFloat(precioUnitario)).toFixed(2);
 
 
             const tallas = document.getElementsByName('talla_ropa');

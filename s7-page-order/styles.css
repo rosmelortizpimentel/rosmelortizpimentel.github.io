@@ -322,6 +322,36 @@ input[type="number"] {
   justify-items: end;
 }
 
+footer {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 25px;
+  margin-top: 25px;
+}
+
+
+.text--purple-color{
+  color: var(--purple-color);
+}
+.return {
+}
+
+.padding {
+  padding: 10px;
+}
+.product__selected {
+  text-align: center;
+}
+
+.product__selected h1 {
+  color: var(--purple-color);
+  font-weight: bold;
+  font-size: var(--mobile-font-size-xl);
+}
+.product__selected p {
+  color: var(--black-color);
+  font-size: var(--font-size-m);
+}
 /*
 320px — 480px: Mobile devices
 481px — 768px: iPads, Tablets
@@ -332,7 +362,7 @@ input[type="number"] {
 
 @media only screen and (max-width: 800px) {
   body {
-    margin: 10px;
+    margin: 10px 20px 0px 10px;
   }
 
   .container {
@@ -356,6 +386,15 @@ input[type="number"] {
   input[type="number"] {
     width: 100%;
     height: 30px;
+  }
+
+  .container-payment {
+    grid-template-columns: repeat(1, 1fr);
+    row-gap: 0px;
+  }
+
+  .payment-description h3 {
+    margin: 0;
   }
 }
 

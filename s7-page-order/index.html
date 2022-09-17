@@ -141,15 +141,22 @@
     <div class="hidden container--order">
         <section class="who-we-are-section container--center">
             <div class="box text--center">
-                <h3 class="text--xl">
+                <h3 class="text--xl text--purple-color ">
                     SU ORDEN
                 </h3>
-                <p class="text--m text--grey-color text--300">
+                <p class="text--m text--300 padding">
                     le enviaremos un correo electrónico de confirmación
                     una vez que su pedido haya sido enviado
                 </p>
             </div>
         </section>
+        <!-- <section class="product__selected">
+            <h1>SU ORDEN</h1>
+            <P> le enviaremos un correo electrónico de confirmación
+                una vez que su pedido haya sido enviado
+            </P>
+            <p></p>
+        </section> -->
 
         <section class="payment-section container--between">
             <div class="box container-payment">
@@ -231,7 +238,7 @@
 
         </section> -->
         <footer>
-            <div class="container--center">
+            <div class="return">
                 <input type="submit" value="REGRESAR" class="button" onclick="showProduct()" />
             </div>
         </footer>
@@ -304,36 +311,36 @@
             productWindow.classList.add('hidden')
             orderWindow.classList.remove('hidden')
 
-            document.getElementById('nombre').innerHTML = name;
-            document.getElementById('direccion').innerHTML = direccion;
+            document.getElementById('nombre').innerHTML = name.toUpperCase();
+            document.getElementById('direccion').innerHTML = direccion.toUpperCase();
             document.getElementById('numeroOrden').innerHTML = Math.floor(Math.random() * 1000000000);;
             document.getElementById('fechaOrden').innerHTML = new Date();
-            document.getElementById('producto').innerHTML = document.querySelector('.product__header > h1').innerHTML
+            document.getElementById('producto').innerHTML = document.querySelector('.product__header > h1').innerHTML.toUpperCase();
 
-            document.getElementById('color').innerHTML = document.getElementById('lbColor').innerHTML;
-            document.getElementById('modelo').innerHTML = document.getElementById('lbDesign').innerHTML;
+            document.getElementById('color').innerHTML = document.getElementById('lbColor').innerHTML.toUpperCase();
+            document.getElementById('modelo').innerHTML = document.getElementById('lbDesign').innerHTML.toUpperCase();
             document.getElementById('cantidad').innerHTML = cantidad;
             document.getElementById('precioUnitario').innerHTML = precioUnitario
             document.getElementById('precioTotal').innerHTML = (parseFloat(cantidad) * parseFloat(precioUnitario)).toFixed(2);
 
 
             const tallas = document.getElementsByName('talla_ropa');
-            console.log(tallas);
             for (var talla of tallas) {
                 if (talla.checked) {
-                    console.log('');
-
                     document.getElementById('talla').innerHTML = talla.value;
                 }
             }
 
+            window.scroll(0, 0);
+
 
         }
         function showProduct() {
-            let productWindow = document.querySelector('.container')
-            let orderWindow = document.querySelector('.container--order')
-            productWindow.classList.remove('hidden')
-            orderWindow.classList.add('hidden')
+            let productWindow = document.querySelector('.container');
+            let orderWindow = document.querySelector('.container--order');
+            productWindow.classList.remove('hidden');
+            orderWindow.classList.add('hidden');
+            window.scroll(0, 0);
         }
     </script>
 </body>

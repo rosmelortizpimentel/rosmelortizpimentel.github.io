@@ -24,7 +24,7 @@
             <div class="image">
                 <img alt="POLO PARA HOMBRE CUELLO REDONDO ESTAMPADO" src="assets/images/polo-estilo-4.jpg">
             </div>
-        </div>
+        </div>  
 
         <div class="product__detail">
             <section class="product__header">
@@ -57,31 +57,41 @@
                         </div>
                     </div>
                 </div>
-                <div class="product__size">
-                    <div class="product__size__selected">
-                        <p>Talla: <span>M</span></p>
+                <div class="container--center">
+                    <div class="container--product-items">
+                        <div class="product__size">
+                            <div class="product__size__selected">
+                                <p>Talla: <span>M</span></p>
+                            </div>
+                            <div class="product__size__converter">
+                                <span>Debes elegir tu talla</span>
+                            </div>
+                            <ol class="sizes">
+                                <li class="sizes__option">
+                                    <input type="radio" name="talla_ropa" value="s">
+                                    <label for="talla_ropa-s" type="button">S</label>
+                                </li>
+                                <li class="sizes__option">
+                                    <input type="radio" name="talla_ropa" value="m">
+                                    <label for="talla_ropa-m" type="button">M</label>
+                                </li>
+                                <li class="sizes__option">
+                                    <input type="radio" name="talla_ropa" value="l">
+                                    <label for="talla_ropa-l" type="button">L</label>
+                                </li>
+                                <li class="sizes__option">
+                                    <input type="radio" name="talla_ropa" disabled="" value="xl">
+                                    <label for="talla_ropa-xl" type="button">XL</label>
+                                </li>
+                            </ol>
+                        </div>
+                        <div class="container--description">
+                            <label for="quantity" class="text">Cantidad:</label>
+                            <input type="number" id="quantity" name="quantity" min="1" max="5">
+                        </div>
                     </div>
-                    <div class="product__size__converter"><span>Debes elegir tu talla</span></div>
-                    <ol class="sizes">
-                        <li class="sizes__option">
-                            <input type="radio" name="talla_ropa" value="s">
-                            <label for="talla_ropa-s" type="button">S</label>
-                        </li>
-                        <li class="sizes__option">
-                            <input type="radio" name="talla_ropa" value="m">
-                            <label for="talla_ropa-m" type="button">M</label>
-                        </li>
-                        <li class="sizes__option">
-                            <input type="radio" name="talla_ropa" value="l">
-                            <label for="talla_ropa-l" type="button">L</label>
-                        </li>
-                        <li class="sizes__option">
-                            <input type="radio" name="talla_ropa" disabled="" value="xl">
-                            <label for="talla_ropa-xl" type="button">XL</label>
-                        </li>
-                    </ol>
-
                 </div>
+              
                 <div class="product__design">
                     <div class="product__design__selected">
                         <p>Dieño: <span>Animales</span></p>
@@ -97,14 +107,117 @@
                             <img alt="POLO PARA HOMBRE CUELLO REDONDO ESTAMPADO" src="assets/images/polo-estilo-3.jpg">
                         </div>
                     </div>
+                </div>
             </section>
-
         </div>
-
-
-
+        
+        <div class="product__order">
+            <div class="order-description">
+                <h3 class="text--center">Ordene su producto</h3>
+                <p class="text--center">
+                Rellene los campos siguientes para proceder con la orden.
+              </p>
+              <form id="formulario">
+                <label for="fname">Nombre:</label><br />
+                <input type="text" id="fname" name="fname" placeholder="John" /><br />
+                <label for="fdir">Direccion:</label><br />
+                <input type="text" id="fdir" name="fdir" placeholder="Times Square New York" /><br />
+                <br />
+                
+              </form>
+              <div class="container--center">
+                <input type="submit" value="ORDENAR" class="button" onclick="showOrder()"/>
+              </div>
+            </div>
+        </div>
+    </div>
         <footer>
         </footer>
+
+        <div class="hidden container--order">
+            <section class="who-we-are-section container--center">
+                <div class="box text--center">
+                    <h3 class="text--xl">
+                        SU ORDEN
+                    </h3>
+                    <p class="text--m text--grey-color text--300">
+                        le enviaremos un correo electrónico de confirmación 
+                        una vez que su pedido haya sido enviado
+                    </p>
+                </div>
+            </section>
+
+            <section class="payment-section container--between">
+                <div class="box container-payment">
+                  <div class="payment-description">
+                    <h3>Numero de orden</h3>
+                    <p>
+                      123456
+                    </p>
+                    <div>
+                        <h3>Tipo de pago</h3>
+                        <p>VISA</br>
+                            <span>XXXXXXXXX123</span>
+                        </p>
+                    </div>
+                  </div>
+                  <div class="payment-description">
+                    <h3>Fecha de orden</h3>
+                    <p>
+                      16-09-2022
+                    </p>
+                  </div>
+
+                  <div class="payment-description">
+                    <h3>Detalle de entrega</h3>
+                    <p id = "nombre">Jhon Doe</p>
+                    <p>Wall street</p>
+                  </div>
+                </div>
+            </section>
+
+            
+            <section class="payment-section container--between">
+                <div class="box container-payment">
+                  <div class="payment-description">
+                    <h3>Producto: <span>Camiseta polo</span></h3>
+                  </div>
+                  <div class="payment-description">
+                    <h3>Cantidad</h3>
+                    <p>
+                        2
+                    </p>
+                  </div>
+
+                  <div class="payment-description">
+                    <h3>Precio</h3>
+                    <p>$ 56.23</p>
+                    
+                  </div>
+                </div>
+            </section>
+
+            <section class="payment-section container--between">
+                <div class="box container-payment">
+                  <div class="payment-description">
+                    <p>Subtotal: <span>$54.12</span></p>
+                    <p>Descuento: <span>$54.12</span></p>
+                    <p>Iva: <span>$54.12</span></p>
+                    <p>Envio: <span>$4.12</span></p>
+                  </div>
+                  <div class="payment-description--total">
+                    <p>Total: <span>$21.98</span></p>
+                  </div>
+                </div>
+
+            </section>
+            <footer>
+                <div class="container--center">
+                    <input type="submit" value="REGRESAR" class="button" onclick="showProduct()"/>
+                </div>
+            </footer>
+        </div>
+
         <script>
             function selecionarTalla() {
 
@@ -116,6 +229,26 @@
 
             function seleccionarDisenio() {
 
+            }
+
+            function showOrder() {
+                let productWindow = document.querySelector('.container')
+                let orderWindow = document.querySelector('.container--order')
+                productWindow.classList.add('hidden')
+                orderWindow.classList.remove('hidden')
+
+                const formulario = document.getElementById("formulario");
+                const name = formulario.elements["fname"].value;
+                const direccion =  formulario.elements["fdir"].value;
+
+                
+                
+            }
+            function showProduct() {
+                let productWindow = document.querySelector('.container')
+                let orderWindow = document.querySelector('.container--order')
+                productWindow.classList.remove('hidden')
+                orderWindow.classList.add('hidden')
             }
         </script>
 </body>

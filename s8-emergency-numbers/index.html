@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title></title>
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=ABeeZee&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+</head>
+
+<body>
+    <div class="main__container">
+
+        <header>
+            <div class="navbar__section">
+                <div class="navbar__container">
+                    <div class="logo__container"><a href="/"><img
+                                src="https://uploads-ssl.webflow.com/61c516277e0aeb1a404f91cc/61f0a5b44090e9978003df91_Frame.svg"
+                                width="158" alt=""></a></div>
+                    <nav class="navbar__menu">
+                        <a href="/" class="navbar__link inline__block">
+                            <div class="navbar__link__text">INICIO</div>
+                            <div class="navbar__menu__underline selected" style="width: 100%; height: 2px;"></div>
+                            <!-- <div class="navbar__menu__underline__right" style="width: 0%; height: 2px;"></div> -->
+                        </a>
+                        <a href="#favoritos" class="navbar__link inline__block">
+                            <div class="navbar__link__text">MIS FAVORITOS</div>
+                            <div class="navbar__menu__underline"></div>
+                            <!-- <div class="navbar__menu__underline__right" style="width: 0%; height: 2px;"></div> -->
+                        </a>
+                        <a href="#contacto" class="navbar__link inline__block">
+                            <div class="navbar__link__text">CONTÁCTANOS</div>
+                            <!-- <div class="navbar__menu__underline__right"></div> -->
+                            <div class="navbar__menu__underline"></div>
+                        </a>
+                        <a href="#" class="navbar__button button" onclick="clearLocalStorage()">Limpiar Favoritos</a>
+                        <div class="nav-subscribe-section">
+                            <h3 class="nav-subscribe-cta-text">Stay up to date <br>with Alinea</h3>
+                            <div class="spacer _24px"></div>
+                            <div id="w-node-_676c9c1b-418e-78c8-86ad-53760ebd2f8f-0ebd2f7d" class="w-form">
+                                <form id="wf-form-Subscribe-Form" name="wf-form-Subscribe-Form"
+                                    data-name="Subscribe Form" method="get" class="footer-form"
+                                    aria-label="Subscribe Form"><input type="email" class="nav-email-field w-input"
+                                        maxlength="256" name="email-2" data-name="Email 2" placeholder="YOUR EMAIL"
+                                        id="email-2" required=""><input type="submit" value="OK"
+                                        data-wait="Please wait..." class="nav-form-submit-button w-button"></form>
+                                <div class="w-form-done" tabindex="-1" role="region"
+                                    aria-label="Subscribe Form success">
+                                    <div>Thank you! Your submission has been received!</div>
+                                </div>
+                                <div class="w-form-fail" tabindex="-1" role="region"
+                                    aria-label="Subscribe Form failure">
+                                    <div>Oops! Something went wrong while submitting the form.</div>
+                                </div>
+                            </div>
+                        </div>
+                    </nav>
+                    <div data-w-id="676c9c1b-418e-78c8-86ad-53760ebd2fa5" class="nav-button-animated w-nav-button"
+                        style="-webkit-user-select: text;" aria-label="menu" role="button" tabindex="0"
+                        aria-controls="w-nav-overlay-0" aria-haspopup="menu" aria-expanded="false">
+                        <div class="top-line"></div>
+                        <div class="nav-middle-line"></div>
+                        <div class="nav-bottom-line"></div>
+                    </div>
+                </div>
+                <div class="w-embed">
+                    <style>
+                        .banner-overlay,
+                        .down--iconwrap,
+                        .confetti--absolute {
+
+                            pointer-events: none;
+
+                        }
+                    </style>
+                </div>
+                <div class="w-nav-overlay" data-wf-ignore="" id="w-nav-overlay-0"></div>
+            </div>
+        </header>
+
+
+        <div class="main__section">
+            <div class="body__section">
+                <p class="center">No tiene favoritos</p>
+                <div class="my__favourites">
+                </div>
+                <h1 class="heading-2 blog-v2">Categorias</h1>
+                <div class="blog-tabs-menu w-tab-menu" role="tablist">
+                    <a data-w-tab="Tab 1" class="blog-tab-link w-inline-block w-tab-link w--current"
+                        id="w-tabs-0-data-w-tab-0" href="#w-tabs-0-data-w-pane-0" role="tab"
+                        aria-controls="w-tabs-0-data-w-pane-0" aria-selected="true">
+                        <div>Todos</div>
+                    </a>
+                    <a data-w-tab="Tab 5" class="blog-tab-link w-inline-block w-tab-link" tabindex="-1"
+                        id="w-tabs-0-data-w-tab-1" href="#w-tabs-0-data-w-pane-1" role="tab"
+                        aria-controls="w-tabs-0-data-w-pane-1" aria-selected="false">
+                        <div>Emergencias</div>
+                    </a>
+                    <a data-w-tab="Tab 7" class="blog-tab-link w-inline-block w-tab-link" tabindex="-1"
+                        id="w-tabs-0-data-w-tab-2" href="#w-tabs-0-data-w-pane-2" role="tab"
+                        aria-controls="w-tabs-0-data-w-pane-2" aria-selected="false">
+                        <div>Bancos</div>
+                    </a>
+                    <a data-w-tab="Tab 4" class="blog-tab-link w-inline-block w-tab-link" tabindex="-1"
+                        id="w-tabs-0-data-w-tab-3" href="#w-tabs-0-data-w-pane-3" role="tab"
+                        aria-controls="w-tabs-0-data-w-pane-3" aria-selected="false">
+                        <div>Seguros</div>
+                    </a>
+                    <a data-w-tab="Tab 3" class="blog-tab-link w-inline-block w-tab-link" tabindex="-1"
+                        id="w-tabs-0-data-w-tab-4" href="#w-tabs-0-data-w-pane-4" role="tab"
+                        aria-controls="w-tabs-0-data-w-pane-4" aria-selected="false">
+                        <div>Gobierno</div>
+                    </a>
+                </div>
+                <div class="all__numbers">
+                    <div>
+                        <a href="tel:+5199999999" class="number__card">
+                            <div class="number__card__image"><img src="https://picsum.photos/500/250" alt="">
+                            </div>
+                            <div class="number__card__info">
+                                <div class="number__card__category">Emergencia</div>
+                                <h2 class="number__card__place">BOMBEROS</h2>
+                                <div class="number__card__call">Llamar (116)</div>
+                            </div>
+                        </a>
+                    </div>
+                    <div>
+                        <a href="tel:+5199999999" class="number__card">
+                            <div class="number__card__image"><img src="https://picsum.photos/500/250" alt="">
+                            </div>
+                            <div class="number__card__info">
+                                <div class="number__card__category">Emergencia</div>
+                                <h2 class="number__card__place">BOMBEROS</h2>
+                                <div class="number__card__call">Llamar (116)</div>
+                            </div>
+                        </a>
+                    </div>
+                    <div>
+                        <a href="tel:+5199999999" class="number__card">
+                            <div class="number__card__image"><img src="https://picsum.photos/500/250" alt="">
+                            </div>
+                            <div class="number__card__info">
+                                <div class="number__card__category">Emergencia</div>
+                                <h2 class="number__card__place">BOMBEROS</h2>
+                                <div class="number__card__call">Llamar (116)</div>
+                            </div>
+                        </a>
+                    </div>
+                    <div>
+                        <a href="tel:+5199999999" class="number__card">
+                            <div class="number__card__image"><img src="https://picsum.photos/500/250" alt="">
+                            </div>
+                            <div class="number__card__info">
+                                <div class="number__card__category">Emergencia</div>
+                                <h2 class="number__card__place">BOMBEROS</h2>
+                                <div class="number__card__call">Llamar (116)</div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <aside class="number__section">
+                <div class="top__numbers">
+                    <div class="number__card">
+                        <div class="number__card__image"><img src="https://picsum.photos/500/250" alt="">
+                        </div>
+                        <div class="number__card__info">
+                            <div class="number__card__category">Emergencia</div>
+                            <h2 class="number__card__place">
+                                <span class="thumbs fa fa-thumbs-up" onclick="like(this)"></span>
+                                <span class="star fa fa-star-o" onclick="favourite(this)"></span> BOMBEROS
+                            </h2>
+                            <div style="display: flex;">
+                                <a href="tel:+5199999999">
+                                    <div class="number__card__call">Llamar (116)</div>
+                                </a>
+
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+        </div>
+        </aside>
+    </div>
+    <footer class="center">
+        2022
+    </footer>
+    </div>
+
+    <script>
+
+        function generateItems(node, numbersToShow) {
+            favourites = JSON.parse(localStorage.getItem('favouritesNumbers'));
+            let item = '';
+            numbersToShow.forEach(number => {
+
+                item += `
+                <div class="number__card">
+                    <div class="number__card__image"><img src="https://picsum.photos/500/250" alt="">
+                        </div>
+                        <div class="number__card__info">
+                            <div class="number__card__category">Emergencia</div>
+                            <h2 class="number__card__place">
+                                <span class="thumbs fa fa-thumbs-up" onclick="like(this)" style="display:none;"></span>
+                                <span class="star ${(favourites !== null && favourites.filter(item => item.id === number.id).length > 0) ? 'fa fa-star favourite' : 'fa fa-star-o'}" onclick="favourite(this)" data-id="${number.id}"></span> ${number.name}
+                            </h2>
+                            <div style="display: flex;">
+                                <a href="tel:+5199999999">
+                                    <div class="number__card__call">Llamar (116)</div>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>`;
+            });
+            node.innerHTML = item;
+        }
+
+        showFavouritesNumbers();
+
+
+        function showAllNumbers() {
+            numbers = JSON.parse(localStorage.getItem('allNumbers'));
+            let node = document.querySelector('.all__numbers');
+            generateItems(node, numbers.filter(item => !item.top))
+
+        }
+
+        function showTopNumbers() {
+            numbers = JSON.parse(localStorage.getItem('allNumbers'));
+            let node = document.querySelector('.top__numbers');
+            generateItems(node, numbers.filter(item => item.top))
+
+        }
+
+        function showFavouritesNumbers() {
+            numbers = JSON.parse(localStorage.getItem('favouritesNumbers'));
+            let node = document.querySelector('.my__favourites');
+            if (numbers === null) {
+                node.innerHTML = null;
+                return;
+            }
+            generateItems(node, numbers)
+        }
+
+
+        function loadData() {
+            let allNumbers = localStorage.getItem('allNumbers');
+            if (allNumbers === null) {
+                fetch("./assets/data/numbers.json")
+                    .then(response => {
+                        return response.json();
+                    })
+                    .then(data => {
+                        console.log("Cargando data inicial");
+                        localStorage.setItem('allNumbers', JSON.stringify(data));
+                        showAllNumbers();
+                        showTopNumbers();
+                    });
+            } else {
+                showAllNumbers();
+                showTopNumbers();
+            }
+        }
+        loadData();
+
+
+        function favourite(icon) {
+            let idNumber = parseInt(icon.getAttribute('data-id'));
+            console.log(icon);
+            if (icon.classList.contains("favourite")) {
+                icon.classList.remove("favourite");
+                icon.classList.remove("fa-star");
+                icon.classList.add("fa-star-o");
+                manageFavourite('remove', idNumber);
+            } else {
+                icon.classList.add("favourite");
+                icon.classList.remove("fa-star-o");
+                icon.classList.add("fa-star");
+                manageFavourite('add', idNumber);
+            }
+        }
+
+        function manageFavourite(action, idNumber) {
+            let favourites = JSON.parse(localStorage.getItem('favouritesNumbers'));
+            let numbers = JSON.parse(localStorage.getItem('allNumbers'));
+            let newfavourites = null;
+            if (favourites === null) {
+                favourites = [];
+            }
+            if (action === 'add') {
+                newfavourites = numbers.filter(item => item.id === idNumber);
+                favourites.push(newfavourites[0])
+            } else if (action === 'remove') {
+                newfavourites = favourites.filter(item => item.id !== idNumber);
+                favourites = newfavourites;
+            }
+            localStorage.setItem('favouritesNumbers', JSON.stringify(favourites));
+            showFavouritesNumbers();
+            showAllNumbers();
+            showTopNumbers();
+        }
+
+
+        function clearLocalStorage() {
+            localStorage.clear();
+            showFavouritesNumbers();
+            loadData();
+        }
+
+    </script>
+</body>
+
+</html>

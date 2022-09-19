@@ -1,0 +1,63 @@
+[
+    {
+        "id":1,
+        "name":"Presidencia",
+        "number":"105",
+        "category":"Emergencia",
+        "picture":"",
+        "descripction":"Lorem ...",
+        "favorite":10,
+        "like":100,
+        "dislike":1,
+        "top":true
+    },
+    {
+        "id":2,
+        "name":"Ambulanias SAMU",
+        "number":"106",
+        "category":"Emergencia",
+        "picture":"105.png",
+        "descripction":"Lorem ...",
+        "favorite":10,
+        "like":100,
+        "dislike":1,
+        "top":true
+    },
+    {
+        "id":3,
+        "name":"Bomberos",
+        "number":"116",
+        "category":"Emergencia",
+        "picture":"105.png",
+        "descripction":"Lorem ...",
+        "favorite":10,
+        "like":100,
+        "dislike":1,
+        "top":false
+
+    },
+    {
+        "id":4,
+        "name":"Scotiabank",
+        "number":"105",
+        "category":"Banco",
+        "picture":"105.png",
+        "descripction":"Lorem ...",
+        "favorite":10,
+        "like":100,
+        "dislike":1,
+        "top":false
+    },
+    {
+        "id":5,
+        "name":"Interbank",
+        "number":"108",
+        "category":"Banco",
+        "picture":"105.png",
+        "descripction":"Lorem ...",
+        "favorite":10,
+        "like":100,
+        "dislike":1,
+        "top":false
+    }
+]

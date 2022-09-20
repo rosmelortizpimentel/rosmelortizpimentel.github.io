@@ -20,9 +20,12 @@
         <header>
             <div class="navbar__section">
                 <div class="navbar__container">
-                    <div class="logo__container"><a href="/"><img
+                    <div class="logo__container"><a href="/">
+                            <!-- <img
                                 src="https://uploads-ssl.webflow.com/61c516277e0aeb1a404f91cc/61f0a5b44090e9978003df91_Frame.svg"
-                                width="158" alt=""></a></div>
+                                width="158" alt=""> -->
+                            <h1>Números de Emergencia</h1>
+                        </a></div>
                     <nav class="navbar__menu">
                         <a href="/" class="navbar__link inline__block">
                             <div class="navbar__link__text">INICIO</div>
@@ -87,17 +90,15 @@
 
         <div class="main__section">
             <div class="body__section">
-                <p class="center">No tiene favoritos</p>
-                <div class="my__favourites">
-                </div>
-                <h1 class="heading-2 blog-v2">Categorias</h1>
-                <div class="blog-tabs-menu w-tab-menu" role="tablist">
+
+                <h2>Números de Emergencia en Perú</h2>
+                <div class="blog-tabs-menu w-tab-menu categories" role="tablist">
                     <a data-w-tab="Tab 1" class="blog-tab-link w-inline-block w-tab-link w--current"
                         id="w-tabs-0-data-w-tab-0" href="#w-tabs-0-data-w-pane-0" role="tab"
                         aria-controls="w-tabs-0-data-w-pane-0" aria-selected="true">
                         <div>Todos</div>
                     </a>
-                    <a data-w-tab="Tab 5" class="blog-tab-link w-inline-block w-tab-link" tabindex="-1"
+                    <a data-w-tab="Tab 5" class="blog-tab-link w-inline-block w-tab-link " tabindex="-1"
                         id="w-tabs-0-data-w-tab-1" href="#w-tabs-0-data-w-pane-1" role="tab"
                         aria-controls="w-tabs-0-data-w-pane-1" aria-selected="false">
                         <div>Emergencias</div>
@@ -166,29 +167,31 @@
                 </div>
             </div>
             <aside class="number__section">
+
+                <h2>Favoritos</h2>
+                <div class="my__favourites">
+                </div>
+
+                <h2>Más Utilizados</h2>
                 <div class="top__numbers">
-                    <div class="number__card">
-                        <div class="number__card__image"><img src="https://picsum.photos/500/250" alt="">
-                        </div>
-                        <div class="number__card__info">
-                            <div class="number__card__category">Emergencia</div>
-                            <h2 class="number__card__place">
-                                <span class="thumbs fa fa-thumbs-up" onclick="like(this)"></span>
-                                <span class="star fa fa-star-o" onclick="favourite(this)"></span> BOMBEROS
-                            </h2>
-                            <div style="display: flex;">
-                                <a href="tel:+5199999999">
-                                    <div class="number__card__call">Llamar (116)</div>
-                                </a>
-
-                            </div>
-                        </div>
-                    </div>
-
                 </div>
         </div>
         </aside>
     </div>
+
+    <div id="popup1" class="overlay">
+        <div class="popup">
+            <h2>Here i am</h2>
+            <a class="close" href="#">&times;</a>
+            <div class="content">
+                Thank to pop me out of that button, but now i'm done so you can close this window.
+
+            </div>
+        </div>
+    </div>
+
+
+
     <footer class="center">
         2022
     </footer>
@@ -206,13 +209,13 @@
                     <div class="number__card__image"><img src="https://picsum.photos/500/250" alt="">
                         </div>
                         <div class="number__card__info">
-                            <div class="number__card__category">Emergencia</div>
+                            <div class="number__card__category">${number.category}</div>
                             <h2 class="number__card__place">
                                 <span class="thumbs fa fa-thumbs-up" onclick="like(this)" style="display:none;"></span>
                                 <span class="star ${(favourites !== null && favourites.filter(item => item.id === number.id).length > 0) ? 'fa fa-star favourite' : 'fa fa-star-o'}" onclick="favourite(this)" data-id="${number.id}"></span> ${number.name}
                             </h2>
                             <div style="display: flex;">
-                                <a href="tel:+5199999999">
+                                <a href="#popup1"">
                                     <div class="number__card__call">Llamar (116)</div>
                                 </a>
                             </div>
@@ -222,10 +225,17 @@
             });
             node.innerHTML = item;
         }
+        function generateCategories(node, categories) {
+            let item = '';
+            categories.forEach(category => {
 
-        showFavouritesNumbers();
-
-
+                item += `
+                <a data-category="${category}" class="blog-tab-link w-inline-block w-tab-link" onclick="filterCategory(this)">
+                    <div>${category}</div>
+                </a>`;
+            });
+            node.innerHTML = item;
+        }
         function showAllNumbers() {
             numbers = JSON.parse(localStorage.getItem('allNumbers'));
             let node = document.querySelector('.all__numbers');
@@ -240,6 +250,17 @@
 
         }
 
+        function showCatgories() {
+            numbers = JSON.parse(localStorage.getItem('allNumbers'));
+            let node = document.querySelector('.categories');
+            let categories = ['Todos'];
+            numbers.forEach(element => {
+                categories.indexOf(element.category) < 0 ? categories.push(element.category) : '';
+            });
+            console.log("cate", categories);
+            generateCategories(node, categories);
+        }
+
         function showFavouritesNumbers() {
             numbers = JSON.parse(localStorage.getItem('favouritesNumbers'));
             let node = document.querySelector('.my__favourites');
@@ -250,10 +271,24 @@
             generateItems(node, numbers)
         }
 
+        function filterCategory(item) {
+            const category = item.getAttribute('data-category');
+            console.log(category);
+            if (category === 'Todos') {
+                showAllNumbers();
+            } else {
+                numbers = JSON.parse(localStorage.getItem('allNumbers'));
+                let node = document.querySelector('.all__numbers');
+                generateItems(node, numbers.filter(item => !item.top && item.category === category));
+            }
+
+
+        }
 
         function loadData() {
             let allNumbers = localStorage.getItem('allNumbers');
-            if (allNumbers === null) {
+            // if (allNumbers === null) {
+            if (true) {
                 fetch("./assets/data/numbers.json")
                     .then(response => {
                         return response.json();
@@ -263,14 +298,14 @@
                         localStorage.setItem('allNumbers', JSON.stringify(data));
                         showAllNumbers();
                         showTopNumbers();
+                        showCatgories();
                     });
             } else {
                 showAllNumbers();
                 showTopNumbers();
+                showCatgories();
             }
         }
-        loadData();
-
 
         function favourite(icon) {
             let idNumber = parseInt(icon.getAttribute('data-id'));
@@ -308,12 +343,16 @@
             showTopNumbers();
         }
 
-
         function clearLocalStorage() {
             localStorage.clear();
             showFavouritesNumbers();
             loadData();
         }
+
+        showFavouritesNumbers();
+        loadData();
+
+
 
     </script>
 </body>

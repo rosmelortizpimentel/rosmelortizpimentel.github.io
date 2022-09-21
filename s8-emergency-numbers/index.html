@@ -5,7 +5,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title></title>
+    <title>Números de Emergenci de Perú</title>
     <link rel="stylesheet" href="styles.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -20,12 +20,14 @@
         <header>
             <div class="navbar__section">
                 <div class="navbar__container">
-                    <div class="logo__container"><a href="/">
+                    <div class="logo__container">
+                        <a href="/">
                             <!-- <img
                                 src="https://uploads-ssl.webflow.com/61c516277e0aeb1a404f91cc/61f0a5b44090e9978003df91_Frame.svg"
                                 width="158" alt=""> -->
                             <h1>Números de Emergencia</h1>
-                        </a></div>
+                        </a>
+                    </div>
                     <nav class="navbar__menu">
                         <a href="/" class="navbar__link inline__block">
                             <div class="navbar__link__text">INICIO</div>
@@ -37,12 +39,18 @@
                             <div class="navbar__menu__underline"></div>
                             <!-- <div class="navbar__menu__underline__right" style="width: 0%; height: 2px;"></div> -->
                         </a>
+                        <a href="#top_numeros" class="navbar__link inline__block">
+                            <div class="navbar__link__text">TOP NÚMEROS</div>
+                            <div class="navbar__menu__underline"></div>
+                            <!-- <div class="navbar__menu__underline__right" style="width: 0%; height: 2px;"></div> -->
+                        </a>
                         <a href="#contacto" class="navbar__link inline__block">
                             <div class="navbar__link__text">CONTÁCTANOS</div>
                             <!-- <div class="navbar__menu__underline__right"></div> -->
                             <div class="navbar__menu__underline"></div>
                         </a>
-                        <a href="#" class="navbar__button button" onclick="clearLocalStorage()">Limpiar Favoritos</a>
+                        <!-- <a href="#" class="navbar__button count__favourites">0
+                            Favoritos</a> -->
                         <div class="nav-subscribe-section">
                             <h3 class="nav-subscribe-cta-text">Stay up to date <br>with Alinea</h3>
                             <div class="spacer _24px"></div>
@@ -90,34 +98,8 @@
 
         <div class="main__section">
             <div class="body__section">
-
                 <h2>Números de Emergencia en Perú</h2>
-                <div class="blog-tabs-menu w-tab-menu categories" role="tablist">
-                    <a data-w-tab="Tab 1" class="blog-tab-link w-inline-block w-tab-link w--current"
-                        id="w-tabs-0-data-w-tab-0" href="#w-tabs-0-data-w-pane-0" role="tab"
-                        aria-controls="w-tabs-0-data-w-pane-0" aria-selected="true">
-                        <div>Todos</div>
-                    </a>
-                    <a data-w-tab="Tab 5" class="blog-tab-link w-inline-block w-tab-link " tabindex="-1"
-                        id="w-tabs-0-data-w-tab-1" href="#w-tabs-0-data-w-pane-1" role="tab"
-                        aria-controls="w-tabs-0-data-w-pane-1" aria-selected="false">
-                        <div>Emergencias</div>
-                    </a>
-                    <a data-w-tab="Tab 7" class="blog-tab-link w-inline-block w-tab-link" tabindex="-1"
-                        id="w-tabs-0-data-w-tab-2" href="#w-tabs-0-data-w-pane-2" role="tab"
-                        aria-controls="w-tabs-0-data-w-pane-2" aria-selected="false">
-                        <div>Bancos</div>
-                    </a>
-                    <a data-w-tab="Tab 4" class="blog-tab-link w-inline-block w-tab-link" tabindex="-1"
-                        id="w-tabs-0-data-w-tab-3" href="#w-tabs-0-data-w-pane-3" role="tab"
-                        aria-controls="w-tabs-0-data-w-pane-3" aria-selected="false">
-                        <div>Seguros</div>
-                    </a>
-                    <a data-w-tab="Tab 3" class="blog-tab-link w-inline-block w-tab-link" tabindex="-1"
-                        id="w-tabs-0-data-w-tab-4" href="#w-tabs-0-data-w-pane-4" role="tab"
-                        aria-controls="w-tabs-0-data-w-pane-4" aria-selected="false">
-                        <div>Gobierno</div>
-                    </a>
+                <div class="categories">
                 </div>
                 <div class="all__numbers">
                     <div>
@@ -166,17 +148,16 @@
                     </div>
                 </div>
             </div>
-            <aside class="number__section">
-
-                <h2>Favoritos</h2>
-                <div class="my__favourites">
-                </div>
-
-                <h2>Más Utilizados</h2>
-                <div class="top__numbers">
-                </div>
+            <span id="top_numeros"></span>
+            <h2>Top Numeros</h2>
+            <div class="top__numbers">
+            </div>
+            <span id="favoritos"></span>
+            <h2>Mis Favoritos</h2>
+            <div class="my__favourites">
+            </div>
         </div>
-        </aside>
+
     </div>
 
     <div id="popup1" class="overlay">
@@ -190,12 +171,19 @@
         </div>
     </div>
 
+    <a class="btn-flotante btn-flotante--right">
+        <span class="fa fa-star"></span><br>
+        <span class="num_favourites"></span>
+    </a>
+    <a onclick="clearLocalStorage()" class="btn-flotante btn-flotante--left">
+        <span class="fa fa-trash"></span><br>
+        <span class="num_favourites">Limpiar Favoritos</span>
+    </a>
 
 
     <footer class="center">
         2022
     </footer>
-    </div>
 
     <script>
 
@@ -230,12 +218,13 @@
             categories.forEach(category => {
 
                 item += `
-                <a data-category="${category}" class="blog-tab-link w-inline-block w-tab-link" onclick="filterCategory(this)">
+                <a data-category="${category}" class="category__filter w-tab-link" onclick="filterCategory(this)">
                     <div>${category}</div>
                 </a>`;
             });
             node.innerHTML = item;
         }
+
         function showAllNumbers() {
             numbers = JSON.parse(localStorage.getItem('allNumbers'));
             let node = document.querySelector('.all__numbers');
@@ -263,12 +252,18 @@
 
         function showFavouritesNumbers() {
             numbers = JSON.parse(localStorage.getItem('favouritesNumbers'));
+            numbers = numbers === null ? [] : numbers;
             let node = document.querySelector('.my__favourites');
-            if (numbers === null) {
-                node.innerHTML = null;
-                return;
+            let nodeCountFavourites = document.querySelector('.num_favourites');
+            nodeCountFavourites.innerHTML = numbers.length + ' Favoritos';
+            generateItems(node, numbers);
+            let trash = document.querySelector('.btn-flotante--left');
+            if (numbers.length > 0) {
+                trash.style.visibility = 'visible';
+            } else {
+                trash.style.visibility = 'hidden';
+
             }
-            generateItems(node, numbers)
         }
 
         function filterCategory(item) {

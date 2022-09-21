@@ -192,13 +192,13 @@
             node.innerHTML = item;
         }
         function generateCategories(node, categories) {
+            numbers = JSON.parse(localStorage.getItem('allNumbers'));
             let item = '';
             categories.forEach(category => {
-
                 item += `
-                <a data-category="${category}" class="category__filter w-tab-link" onclick="filterCategory(this)">
-                    <div>${category}</div>
-                </a>`;
+                    <a data-category="${category}" class="category__filter" onclick="filterCategory(this)">
+                        <div>${category} (${category === 'Todos' ? numbers.length : numbers.filter(item => item.category === category).length}) </div>
+                    </a>`;
             });
             node.innerHTML = item;
         }
@@ -206,7 +206,8 @@
         function showAllNumbers() {
             numbers = JSON.parse(localStorage.getItem('allNumbers'));
             let node = document.querySelector('.all__numbers');
-            generateItems(node, numbers.filter(item => !item.top))
+            generateItems(node, numbers)
+            // generateItems(node, numbers.filter(item => !item.top))
 
         }
 
@@ -220,7 +221,7 @@
         function showCatgories() {
             numbers = JSON.parse(localStorage.getItem('allNumbers'));
             let node = document.querySelector('.categories');
-            let categories = ['Todos'];
+            let categories = [`Todos`];
             numbers.forEach(element => {
                 categories.indexOf(element.category) < 0 ? categories.push(element.category) : '';
             });
@@ -252,7 +253,7 @@
             } else {
                 numbers = JSON.parse(localStorage.getItem('allNumbers'));
                 let node = document.querySelector('.all__numbers');
-                generateItems(node, numbers.filter(item => !item.top && item.category === category));
+                generateItems(node, numbers.filter(item => /*!item.top && */item.category === category));
             }
 
 

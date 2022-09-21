@@ -24,7 +24,7 @@
 * {
   margin: 0;
   font-weight: normal;
-  color: var(--black-color);
+  /* color: var(--black-color); */
   font-size: var(--font-size);
   font-family: "ABeeZee", sans-serif;
   border: solid 0px;
@@ -88,6 +88,15 @@ h2 {
   text-transform: uppercase;
   object-fit: fill;
   margin-bottom: 30px;
+  margin-top: 50px;
+}
+
+footer {
+  height: 180px;
+  box-sizing: border-box;
+  padding-top: 30px;
+  color: var(--white-color);
+  width: 100%;
   margin-top: 50px;
 }
 
@@ -448,6 +457,25 @@ a {
   left: 30px;
 }
 
+/*FOOTER*/
+
+.socialnetworks {
+  height: 60%;
+  text-align: center;
+}
+
+.socialnetworks img {
+  border-radius: 50%;
+  background-color: var(--color-white);
+}
+
+.socialnetworks img:hover {
+  background-color: var(--white-color);
+}
+.copyright {
+  height: 40%;
+  text-align: center;
+}
 /*MENU*/
 /* ul {
   display: flex;
@@ -675,7 +703,7 @@ li:hover:after {
   color: #333;
 }
 .popup .close:hover {
-  color: #06d85f;
+  color: var(--primary-color);
 }
 .popup .content {
   max-height: 30%;

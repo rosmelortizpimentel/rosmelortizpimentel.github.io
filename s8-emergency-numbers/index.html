@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 
 <head>
     <meta charset="UTF-8" />
@@ -22,96 +22,36 @@
                 <div class="navbar__container">
                     <div class="logo__container">
                         <a href="/">
-                            <!-- <img
-                                src="https://uploads-ssl.webflow.com/61c516277e0aeb1a404f91cc/61f0a5b44090e9978003df91_Frame.svg"
-                                width="158" alt=""> -->
-                            <h1>Números de Emergencia</h1>
+                            <img src="assets/images/logo.png" width="158" alt="">
                         </a>
                     </div>
                     <nav class="navbar__menu">
-                        <a href="/" class="navbar__link inline__block">
+                        <a href="/s8-emergency-numbers" onclick="goMenu()" class="navbar__link inline__block">
                             <div class="navbar__link__text">INICIO</div>
-                            <div class="navbar__menu__underline selected" style="width: 100%; height: 2px;"></div>
-                            <!-- <div class="navbar__menu__underline__right" style="width: 0%; height: 2px;"></div> -->
+                            <div class="navbar__menu__underline selected"></div>
                         </a>
-                        <a href="#favoritos" class="navbar__link inline__block">
+                        <a href="#favoritos" onclick="goMenu()" class="navbar__link inline__block">
                             <div class="navbar__link__text">MIS FAVORITOS</div>
                             <div class="navbar__menu__underline"></div>
-                            <!-- <div class="navbar__menu__underline__right" style="width: 0%; height: 2px;"></div> -->
                         </a>
-                        <a href="#top_numeros" class="navbar__link inline__block">
+                        <a href="#top_numeros" onclick="goMenu()" class="navbar__link inline__block">
                             <div class="navbar__link__text">TOP NÚMEROS</div>
                             <div class="navbar__menu__underline"></div>
-                            <!-- <div class="navbar__menu__underline__right" style="width: 0%; height: 2px;"></div> -->
                         </a>
-                        <a href="#contacto" class="navbar__link inline__block" style="display: none;">
-                            <div class="navbar__link__text">CONTÁCTANOS</div>
-                            <!-- <div class="navbar__menu__underline__right"></div> -->
-                            <div class="navbar__menu__underline"></div>
-                        </a>
-                        <!-- <a href="#" class="navbar__button count__favourites">0
-                            Favoritos</a> -->
                     </nav>
-                    <div class="nav-button-animated w-nav-button w--open" style="-webkit-user-select: text;"
-                        aria-label="menu" role="button" tabindex="0" aria-controls="w-nav-overlay-0"
-                        aria-haspopup="menu" aria-expanded="true">
-                        <span class="fa fa-bars color-primary"></span>
+                    <div class="nav-button-animated w-nav-button w--open" aria-label="menu" role="button" tabindex="0"
+                        aria-controls="w-nav-overlay-0" aria-haspopup="menu" aria-expanded="true">
+                        <span id="mobile_menu" class="fa fa-bars color-primary" onclick="validateMenu(this)"></span>
                     </div>
                 </div>
             </div>
         </header>
-
-
         <div class="main__section">
             <div class="body__section">
                 <h2>Números de Emergencia en Perú</h2>
                 <div class="categories">
                 </div>
                 <div class="all__numbers">
-                    <div>
-                        <a href="tel:+5199999999" class="number__card">
-                            <div class="number__card__image"><img src="https://picsum.photos/500/250" alt="">
-                            </div>
-                            <div class="number__card__info">
-                                <div class="number__card__category">Emergencia</div>
-                                <h2 class="number__card__place">BOMBEROS</h2>
-                                <div class="number__card__call">Llamar (116)</div>
-                            </div>
-                        </a>
-                    </div>
-                    <div>
-                        <a href="tel:+5199999999" class="number__card">
-                            <div class="number__card__image"><img src="https://picsum.photos/500/250" alt="">
-                            </div>
-                            <div class="number__card__info">
-                                <div class="number__card__category">Emergencia</div>
-                                <h2 class="number__card__place">BOMBEROS</h2>
-                                <div class="number__card__call">Llamar (116)</div>
-                            </div>
-                        </a>
-                    </div>
-                    <div>
-                        <a href="tel:+5199999999" class="number__card">
-                            <div class="number__card__image"><img src="https://picsum.photos/500/250" alt="">
-                            </div>
-                            <div class="number__card__info">
-                                <div class="number__card__category">Emergencia</div>
-                                <h2 class="number__card__place">BOMBEROS</h2>
-                                <div class="number__card__call">Llamar (116)</div>
-                            </div>
-                        </a>
-                    </div>
-                    <div>
-                        <a href="tel:+5199999999" class="number__card">
-                            <div class="number__card__image"><img src="https://picsum.photos/500/250" alt="">
-                            </div>
-                            <div class="number__card__info">
-                                <div class="number__card__category">Emergencia</div>
-                                <h2 class="number__card__place">BOMBEROS</h2>
-                                <div class="number__card__call">Llamar (116)</div>
-                            </div>
-                        </a>
-                    </div>
                 </div>
             </div>
             <span id="top_numeros"></span>
@@ -123,7 +63,6 @@
             <div class="my__favourites">
             </div>
         </div>
-
     </div>
 
     <div id="popup1" class="overlay">
@@ -138,6 +77,7 @@
             </div>
         </div>
     </div>
+
     <footer>
         <div class="socialnetworks">
             <a href="https://github.com/rosmelortizpimentel/The-Front-End-Bootcamp"><img
@@ -161,8 +101,6 @@
     </a>
 
 
-
-
     <script>
 
         function generateItems(node, numbersToShow) {
@@ -172,7 +110,7 @@
 
                 item += `
                 <div class="number__card">
-                    <div class="number__card__image"><img src="https://picsum.photos/500/250" alt="">
+                    <div class="number__card__image"><img src="assets/images/${number.picture}" alt="">
                         </div>
                         <div class="number__card__info">
                             <div class="number__card__category">${number.category}</div>
@@ -180,9 +118,9 @@
                                 <span class="thumbs fa fa-thumbs-up" onclick="like(this)" style="display:none;"></span>
                                 <span class="star ${(favourites !== null && favourites.filter(item => item.id === number.id).length > 0) ? 'fa fa-star favourite' : 'fa fa-star-o'}" onclick="favourite(this)" data-id="${number.id}"></span> ${number.name}
                             </h2>
-                            <div style="display: flex;">
+                            <div class="btn__call">
                                 <a href="#popup1"">
-                                    <div class="number__card__call">Llamar (116)</div>
+                                    <div class="number__card__call">${number.number} </div>
                                 </a>
                             </div>
                         </div>
@@ -255,8 +193,6 @@
                 let node = document.querySelector('.all__numbers');
                 generateItems(node, numbers.filter(item => /*!item.top && */item.category === category));
             }
-
-
         }
 
         function loadData() {
@@ -326,6 +262,38 @@
         showFavouritesNumbers();
         loadData();
 
+        function validateMenu(_this) {
+            let mobile_menu = document.getElementById('mobile_menu');
+            if (mobile_menu.classList.contains("fa-bars")) {
+                showMobileMenu(mobile_menu);
+            } else {
+                hiddenMobileMenu(mobile_menu);
+            }
+        }
+
+        function showMobileMenu(mobile_menu) {
+            let menu = document.querySelector('.navbar__menu');
+            mobile_menu.classList.remove("fa-bars");
+            mobile_menu.classList.add("fa-close");
+            menu.classList.remove("display--none");
+            menu.classList.add("display--block");
+            console.log("Mostrar menu");
+        }
+
+        function hiddenMobileMenu(mobile_menu) {
+            let menu = document.querySelector('.navbar__menu');
+            mobile_menu.classList.remove("fa-close");
+            mobile_menu.classList.add("fa-bars");
+            menu.classList.remove("display--block");
+            menu.classList.add("display--none");
+            console.log("ocultar menu");
+        }
+
+        function goMenu() {
+            let menu = document.querySelector('.navbar__menu');
+            hiddenMobileMenu(mobile_menu);
+
+        }
 
 
     </script>

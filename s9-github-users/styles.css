@@ -17,6 +17,9 @@
   color: white;
 }
 
+::placeholder {
+  color: #8e97ab;
+}
 div {
   border: solid 0px;
 }
@@ -41,10 +44,10 @@ body {
   flex-direction: column;
   margin: 10px;
   background-color: var(--background-container-color);
-  height: 70px;
+  height: 60px;
   justify-content: center;
   text-align: center;
-  padding: 15px 15px;
+  padding: 10px 10px 10px 20px;
   border-radius: 10px;
 }
 

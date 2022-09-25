@@ -1,0 +1,140 @@
+/* VARIABLES */
+:root {
+  --primary-color: #000000;
+  --secondary-color: blue;
+  --tertiary-color: #000000;
+}
+/* GENERICOS */
+* {
+  margin: 0;
+  font-family: "ABeeZee", sans-serif;
+  box-sizing: border-box;
+  color: white;
+}
+
+div {
+  border: solid 0px;
+}
+
+body {
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-flow: column nowrap;
+  background-color: #03001c;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  width: 60%;
+}
+
+.section__search {
+  display: flex;
+  flex-direction: column;
+  margin: 10px;
+}
+
+form {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.input__container {
+  width: 75%;
+}
+
+.input__container input {
+  width: 100%;
+  color: black;
+}
+
+.button__container {
+  width: 25%;
+}
+.button__container button {
+  width: 100%;
+  color: white;
+  background-color: var(--secondary-color);
+}
+
+.section__user {
+  display: flex;
+  flex-direction: row;
+  margin: 10px;
+  padding-right: 10px;
+  border-radius: 10px;
+  background-color: grey;
+}
+
+/* AVATAR */
+.section__user__avatar {
+  min-width: 150px;
+  margin: 10px;
+}
+
+.section__user__avatar div {
+  display: flex;
+  text-align: center;
+  justify-content: center;
+}
+
+.section__user__avatar img {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+}
+
+/* USER INFO*/
+.section__user_info {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  margin: 10px;
+}
+
+.user__name {
+  display: flex;
+  justify-content: space-between;
+}
+
+.user__name h1 {
+  font-weight: bold;
+}
+
+.user__name span {
+}
+
+.user__statistics {
+  display: flex;
+  justify-content: space-between;
+  border-radius: 10px;
+  background-color: #000000;
+  padding: 20px;
+  margin: 10px 0px;
+}
+
+.user__box__statistics {
+  width: 100px;
+  display: flex;
+  flex-direction: column;
+}
+
+.user__box__statistics strong {
+  font-weight: bold;
+}
+
+.user__box__statistics span {
+}
+
+.user__additional__information {
+  display: grid;
+  row-gap: 20px;
+  grid-template-columns: 50fr 50fr;
+}
+
+.user__additional__information div {
+}

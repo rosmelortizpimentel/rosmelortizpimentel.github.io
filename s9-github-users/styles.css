@@ -75,7 +75,7 @@ form {
 .input__container span {
   margin-top: 12px;
   margin-right: 15px;
-  color: var(--button-color);
+  color: var(--blue-color);
 }
 
 .input__container input {
@@ -90,7 +90,7 @@ form {
 
 .button__container button {
   width: 100%;
-  background-color: var(--button-color);
+  background-color: var(--blue-color);
   height: 100%;
   border-radius: 5px;
   border: 0px;
@@ -115,6 +115,7 @@ form {
   display: flex;
   text-align: center;
   justify-content: center;
+  margin: 30px 10px 30px 30px;
 }
 
 .section__user__avatar img {
@@ -128,7 +129,7 @@ form {
   width: 100%;
   display: flex;
   flex-direction: column;
-  margin: 10px;
+  margin: 40px;
 }
 
 .user__name {
@@ -138,6 +139,7 @@ form {
 }
 
 .user__name h1 {
+  font-size: 20px;
   font-weight: bold;
   font-size: 25px;
 }
@@ -190,7 +192,6 @@ form {
 
 .user__additional__information {
   display: grid;
-  row-gap: 20px;
   grid-template-columns: 50fr 50fr;
 }
 

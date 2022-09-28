@@ -119,9 +119,9 @@
         }
 
         function showUser(data) {
-
+            console.log(data);
             userAvatar.src = data.avatar_url;
-            userName.innerHTML = data.name;
+            userName.innerHTML = data.name ? data.name : 'Not Available';
             let dateFormat = new Date(data.created_at).toLocaleDateString('us-us', { year: "numeric", month: "short", day: "numeric" });
             userCreated.innerHTML = `Joined ${dateFormat}`;
             userLogin.innerHTML = `@${data.login}`;

@@ -225,3 +225,41 @@ form {
 .hidden {
   display: none !important;
 }
+
+/* Tamaño teléfonos (480-menos ) */
+@media all and (max-width: 768px) {
+  .container {
+    width: 80%;
+  }
+  .section__user {
+    flex-direction: column;
+  }
+}
+
+@media all and (max-width: 450px) {
+  .container {
+    width: 100%;
+  }
+
+  .section__user_info {
+    align-items: center;
+  }
+  .user__additional__information {
+    grid-template-columns: 100fr;
+    width: 100%;
+  }
+  .user__statistics {
+    flex-direction: column;
+    width: 100%;
+    align-items: center;
+    text-align: center;
+    row-gap: 10px;
+  }
+
+  .user__bio .user__login .user__name {
+    width: 100%;
+  }
+  .user__name {
+    flex-direction: column;
+  }
+}

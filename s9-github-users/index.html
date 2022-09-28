@@ -32,7 +32,7 @@
                     <img id="userAvatar" alt="">
                 </div>
             </div>
-            <div class="section__user_info">
+            <div class="section__user__info">
                 <div class="user__name">
                     <h1 id="userName"></h1>
                     <span id="userCreated"></span>
@@ -61,7 +61,7 @@
                 <div class="user__additional__information">
                     <div><i class="fa-solid fa-location-dot"></i><span class="box__info" id="userLocation"></span></div>
                     <div><i class="fa-brands fa-twitter"></i><span class="box__info" id="userTwiter"></span></div>
-                    <div><i class="fa-solid fa-link"></i><span><a class="box__info" id="userBlog"></a></span></div>
+                    <div><i class="fa-solid fa-link"></i><span class="box__info" id="userBlog"></span></div>
                     <div><i class="fa-solid fa-building"></i><span class="box__info" id="userCompany"></span></div>
                 </div>
             </div>
@@ -119,9 +119,9 @@
         }
 
         function showUser(data) {
-            console.log(data);
+
             userAvatar.src = data.avatar_url;
-            userName.innerHTML = data.name ? data.name : 'Not Available';
+            userName.innerHTML = data.name;
             let dateFormat = new Date(data.created_at).toLocaleDateString('us-us', { year: "numeric", month: "short", day: "numeric" });
             userCreated.innerHTML = `Joined ${dateFormat}`;
             userLogin.innerHTML = `@${data.login}`;
@@ -133,7 +133,6 @@
             userLocation.innerHTML = data.location ? data.location : 'Not Available';
             userTwiter.innerHTML = 'Not Available';
             userBlog.innerHTML = data.blog ? data.blog : 'Not Available';
-            userBlog.href = data.blog ? data.blog : '';
             userCompany.innerHTML = data.company ? data.company : 'Not Available';
             userNotFoundSection.classList.add('hidden')
             userInfoSection.classList.remove('hidden')

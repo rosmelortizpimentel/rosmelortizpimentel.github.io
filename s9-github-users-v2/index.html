@@ -61,7 +61,7 @@
                 <div class="user__additional__information">
                     <div><i class="fa-solid fa-location-dot"></i><span class="box__info" id="userLocation"></span></div>
                     <div><i class="fa-brands fa-twitter"></i><span class="box__info" id="userTwiter"></span></div>
-                    <div><i class="fa-solid fa-link"></i><span><a class="box__info" id="userBlog"></a></span></div>
+                    <div><i class="fa-solid fa-link"></i><span class="box__info" id="userBlog"></span></div>
                     <div><i class="fa-solid fa-building"></i><span class="box__info" id="userCompany"></span></div>
                 </div>
             </div>
@@ -133,7 +133,6 @@
             userLocation.innerHTML = data.location ? data.location : 'Not Available';
             userTwiter.innerHTML = 'Not Available';
             userBlog.innerHTML = data.blog ? data.blog : 'Not Available';
-            userBlog.href = data.blog ? data.blog : '';
             userCompany.innerHTML = data.company ? data.company : 'Not Available';
             userNotFoundSection.classList.add('hidden')
             userInfoSection.classList.remove('hidden')

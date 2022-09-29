@@ -233,7 +233,7 @@ form {
   }
   .section__user {
     flex-direction: column;
-    padding: 15px;
+    padding: 30px;
   }
 }
 

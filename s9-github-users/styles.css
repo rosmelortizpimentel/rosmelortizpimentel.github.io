@@ -233,6 +233,7 @@ form {
   }
   .section__user {
     flex-direction: column;
+    padding: 15px;
   }
 }
 
@@ -248,14 +249,14 @@ form {
   .user__additional__information {
     grid-template-columns: 100fr;
     width: 100%;
-    text-align: center;
   }
+
   .user__statistics {
-    flex-direction: column;
+    /* flex-direction: row; */
     width: 100%;
     align-items: center;
     text-align: center;
-    row-gap: 20px;
+    /* row-gap: 20px; */
   }
 
   .user__bio .user__login .user__name {

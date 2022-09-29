@@ -252,11 +252,9 @@ form {
   }
 
   .user__statistics {
-    /* flex-direction: row; */
     width: 100%;
     align-items: center;
     text-align: center;
-    /* row-gap: 20px; */
   }
 
   .user__bio .user__login .user__name {
@@ -269,5 +267,13 @@ form {
 
   .user__name {
     flex-direction: column;
+  }
+}
+
+@media all and (max-width: 350px) {
+  .user__statistics {
+    flex-direction: column;
+    row-gap: 15px;
+    padding: 20px;
   }
 }

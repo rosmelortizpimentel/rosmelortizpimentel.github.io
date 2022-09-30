@@ -131,7 +131,7 @@
             userFollowers.innerHTML = data.followers;
             userFollowing.innerHTML = data.following;
             userLocation.innerHTML = data.location ? data.location : 'Not Available';
-            userTwiter.innerHTML = 'Not Available';
+            userTwiter.innerHTML = data.twitter_username ? data.twitter_username : 'Not Available';
             userBlog.innerHTML = data.blog ? data.blog : 'Not Available';
             userCompany.innerHTML = data.company ? data.company : 'Not Available';
             userNotFoundSection.classList.add('hidden')
